@@ -1,0 +1,2 @@
+# python pip binaries
+export PATH=$PATH:/home/mib/.local/bin

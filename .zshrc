@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -8,7 +7,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
+source ~/.profile
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -99,15 +99,23 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# My Script files
+export PATH=$PATH:$HOME/bin
+
 # Go Environment variables
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+source .goenv
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias python='python3.13'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mib/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mib/google-cloud-sdk/path.zsh.inc'; fi
+export PATH=$PATH:/home/mib/google-cloud-sdk/bin
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mib/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mib/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
