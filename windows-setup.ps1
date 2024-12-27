@@ -29,8 +29,20 @@ if (Test-Path $winProfilePath){
   Write-Host "Winprofile not found at $winProfilePath"
 }
 
-# Install scoop
-Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression | Out-Null
 
+Write-Host "Installing Scoop..."
+if (Get-Command scoop -ErrorAction SilentlyContinue) {
+  Write-Host "Scoop already installed"
+} else {
+  # Install scoop
+  Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+}
+
+
+Write-Host "Install basic tools..."
 # Install basic stuff
-scoop install neovim git ripgrep wget fd unzip gzip mingw make
+scoop install neovim git ripgrep wget fd unzip gzip mingw make win32yank
+
+# Install nerd fonts
+scoop bucket add nerd-fonts
+scoop install FiraCode-NF NerdFontsSymbolsOnly
