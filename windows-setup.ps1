@@ -30,7 +30,7 @@ if (Test-Path $winProfilePath){
 }
 
 # Install scoop
-Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression | Out-Null
 
 # Install basic stuff
 scoop install neovim git ripgrep wget fd unzip gzip mingw make
