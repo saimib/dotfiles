@@ -71,7 +71,7 @@ mibutils/
 ## Dependencies
 
 - [Cobra](https://github.com/spf13/cobra) - CLI framework
-- [UniPDF](https://github.com/unidoc/unipdf) - PDF processing library
+- [pdfcpu](https://github.com/pdfcpu/pdfcpu) - Open-source PDF processing library
 
 ## License
 
