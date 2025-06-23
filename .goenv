@@ -1,4 +1,4 @@
 ## All go related environment variables and values
 
-export GOPATH=/usr/local/go
+export GOPATH=/Users/manibalan/go
 export PATH=$PATH:$GOPATH/bin
