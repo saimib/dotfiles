@@ -1,16 +1,14 @@
 /*
 Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
 	"os"
 
+	"github.com/saimib/dotfiles/utils/cmd/pdf"
 	"github.com/spf13/cobra"
 )
-
-
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -36,6 +34,9 @@ func Execute() {
 }
 
 func init() {
+	// Add PDF command to root
+	rootCmd.AddCommand(pdf.PDFCmd)
+
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
